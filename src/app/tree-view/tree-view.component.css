@@ -1,0 +1,18 @@
+.custom-tree {
+    width: 100%;
+    background: #f4f6f9;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .mat-tree-node {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .node-label {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  

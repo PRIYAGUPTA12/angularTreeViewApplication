@@ -1,0 +1,63 @@
+/* Table base */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    font-size: 14px;
+  }
+  
+  .data-table thead {
+    background-color: #f5f5f5;
+  }
+  
+  .data-table th,
+  .data-table td {
+    padding: 8px 12px;
+    border: 1px solid #e0e0e0;
+    text-align: left;
+  }
+  
+  .data-table th {
+    font-weight: 600;
+    background-color: #e0e7ff;
+  }
+  
+  /* Data rows */
+  .data-row td {
+    padding: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #1e293b;
+    border-bottom: 1px solid #e2e8f0;
+    cursor:pointer;
+  }
+  
+  /* Zebra striping only for data rows */
+  .data-row:nth-child(even) td {
+    background-color: #f9fafb;
+  }
+  
+  /* Level 1 Group Row */
+  .grouprow {
+    background-color: #3f5ebd; /* lighter than #1e3a8a */
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 12px;
+  }
+  
+  /* Level 2 Group Row */
+  .innerGroupTable {
+    background-color: #6c83c6;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 12px;
+  }
+  
+  /* Icons in rows */
+  mat-icon {
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+  

@@ -1,0 +1,69 @@
+<ng-container *ngIf="dataLoaded; else loading">
+  <ng-container *ngIf="treeData.length > 0; else noData">
+    
+    <!-- Single Header Table -->
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Ccy</th>
+          <th>Quantity</th>
+          <th>Description</th>
+          <th>Valuation</th>
+          <th>Total in CHF</th>
+          <th>ESG Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- Accordion Rows -->
+        <ng-container *ngFor="let lvl1 of treeData">
+          <!-- Level 1 -->
+          <tr class="group-row lvl1" (click)="lvl1.expanded = !lvl1.expanded">
+            <td colspan="6" class="grouprow">
+              <mat-icon>{{ lvl1.expanded ? 'expand_less' : 'expand_more' }}</mat-icon>
+              <strong>{{ lvl1.name }}</strong>
+            </td>
+          </tr>
+
+          <ng-container *ngIf="lvl1.expanded">
+            <ng-container *ngFor="let lvl2 of lvl1.children">
+              <!-- Level 2 -->
+              <tr class="group-row lvl2" (click)="lvl2.expanded = !lvl2.expanded">
+                <td colspan="6" style="padding-left: 2rem;" class="innerGroupTable">
+                  <mat-icon>{{ lvl2.expanded ? 'expand_less' : 'expand_more' }}</mat-icon>
+                  {{ lvl2.name }}
+                </td>
+              </tr>
+
+              <!-- Level 3: Actual Data Rows -->
+              <ng-container *ngIf="lvl2.expanded">
+                <tr *ngFor="let row of lvl2.children" class="data-row" >
+                  <td >{{ row.data?.Row1Col1 || '-' }}</td>
+                  <td >{{ row.data?.Row1Col2 | number:'1.0-2' }}</td>
+                  <td >{{ row.data?.Row1Col3 }}</td>
+                  <td>{{ row.data?.Row1Col6 | number:'1.2-2' }}</td>
+                  <td>{{ row.data?.Row1Col7 | number:'1.2-2' }}</td>
+                  <td>{{ row.data?.EsgRatingGroupNr }}</td>
+                </tr>
+              </ng-container>
+            </ng-container>
+          </ng-container>
+
+        </ng-container>
+
+      </tbody>
+    </table>
+  </ng-container>
+</ng-container>
+
+<!-- Spinner while loading -->
+<ng-template #loading>
+  <div style="text-align: center; margin-top: 2rem;">
+    <mat-progress-spinner color="primary" mode="indeterminate"></mat-progress-spinner>
+  </div>
+</ng-template>
+
+<!-- Fallback: No data -->
+<ng-template #noData>
+  <p style="text-align: center;">No data available to display.</p>
+</ng-template>

@@ -1,0 +1,130 @@
+{
+  "hash": "d866c58b",
+  "configHash": "0e519002",
+  "lockfileHash": "fc5bbeef",
+  "browserHash": "e302d276",
+  "optimized": {
+    "@angular/cdk/bidi": {
+      "src": "../../../../../../node_modules/@angular/cdk/fesm2022/bidi.mjs",
+      "file": "@angular_cdk_bidi.js",
+      "fileHash": "eeb63948",
+      "needsInterop": false
+    },
+    "@angular/cdk/tree": {
+      "src": "../../../../../../node_modules/@angular/cdk/fesm2022/tree.mjs",
+      "file": "@angular_cdk_tree.js",
+      "fileHash": "1766953a",
+      "needsInterop": false
+    },
+    "@angular/common": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "d597b8a9",
+      "needsInterop": false
+    },
+    "@angular/core": {
+      "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "295154ee",
+      "needsInterop": false
+    },
+    "@angular/material/button": {
+      "src": "../../../../../../node_modules/@angular/material/fesm2022/button.mjs",
+      "file": "@angular_material_button.js",
+      "fileHash": "3d9780a4",
+      "needsInterop": false
+    },
+    "@angular/material/expansion": {
+      "src": "../../../../../../node_modules/@angular/material/fesm2022/expansion.mjs",
+      "file": "@angular_material_expansion.js",
+      "fileHash": "a80b932d",
+      "needsInterop": false
+    },
+    "@angular/material/icon": {
+      "src": "../../../../../../node_modules/@angular/material/fesm2022/icon.mjs",
+      "file": "@angular_material_icon.js",
+      "fileHash": "1106144d",
+      "needsInterop": false
+    },
+    "@angular/material/tree": {
+      "src": "../../../../../../node_modules/@angular/material/fesm2022/tree.mjs",
+      "file": "@angular_material_tree.js",
+      "fileHash": "1acce55e",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "5be1dd19",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "ddf92bff",
+      "needsInterop": false
+    },
+    "@angular/common/http": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/http.mjs",
+      "file": "@angular_common_http.js",
+      "fileHash": "216a2bd2",
+      "needsInterop": false
+    },
+    "@angular/material/divider": {
+      "src": "../../../../../../node_modules/@angular/material/fesm2022/divider.mjs",
+      "file": "@angular_material_divider.js",
+      "fileHash": "ae82797b",
+      "needsInterop": false
+    },
+    "@angular/material/progress-spinner": {
+      "src": "../../../../../../node_modules/@angular/material/fesm2022/progress-spinner.mjs",
+      "file": "@angular_material_progress-spinner.js",
+      "fileHash": "1bde699b",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-U2O2N5MM": {
+      "file": "chunk-U2O2N5MM.js"
+    },
+    "chunk-B3PIOT5L": {
+      "file": "chunk-B3PIOT5L.js"
+    },
+    "chunk-MKURCKYH": {
+      "file": "chunk-MKURCKYH.js"
+    },
+    "chunk-DZ7AZUJT": {
+      "file": "chunk-DZ7AZUJT.js"
+    },
+    "chunk-YUVD6OXI": {
+      "file": "chunk-YUVD6OXI.js"
+    },
+    "chunk-VW2Y2AUY": {
+      "file": "chunk-VW2Y2AUY.js"
+    },
+    "chunk-IKAMARZA": {
+      "file": "chunk-IKAMARZA.js"
+    },
+    "chunk-HLMDLQHY": {
+      "file": "chunk-HLMDLQHY.js"
+    },
+    "chunk-UG4RS2RS": {
+      "file": "chunk-UG4RS2RS.js"
+    },
+    "chunk-UIWJAKBY": {
+      "file": "chunk-UIWJAKBY.js"
+    },
+    "chunk-RV5HA4PH": {
+      "file": "chunk-RV5HA4PH.js"
+    },
+    "chunk-3XRGXSB3": {
+      "file": "chunk-3XRGXSB3.js"
+    },
+    "chunk-6BVO3MC5": {
+      "file": "chunk-6BVO3MC5.js"
+    },
+    "chunk-JGF2GHYT": {
+      "file": "chunk-JGF2GHYT.js"
+    }
+  }
+}
