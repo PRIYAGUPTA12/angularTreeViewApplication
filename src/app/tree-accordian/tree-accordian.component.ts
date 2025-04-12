@@ -40,12 +40,11 @@ export class TreeAccordianComponent {
 
   constructor(private http: HttpClient,private cdRef: ChangeDetectorRef) {}
   ngOnInit() {
-    debugger
     this.http.get<any>('data.json').subscribe({
       next: (res) => {
         const tableData = res?.Data?.Table;
         if (tableData) {
-          this.treeData = this.transformToTree(tableData);
+          this.treeData = this.transformToDynamicTree(tableData);
           console.log(this.treeData)
           this.dataSource.data = this.treeData;
           this.dataLoaded = true; // 🔥 Set flag to true when ready
@@ -60,60 +59,44 @@ export class TreeAccordianComponent {
   
   hasChild = (_: number, node: TreeNode) => !!node.children && node.children.length > 0;
   
-  transformToTree1(data: any[]): TreeNode[] {
+
+   transformToDynamicTree(data: any[]): TreeNode[] {
     const tree: TreeNode[] = [];
   
     data.forEach(item => {
-      const lvl1 = item.TreeRuleDisplayName1;
-      const lvl2 = item.TreeRuleDisplayName2;
+      let currentLevel = tree;
+      let parent: TreeNode | null = null;
   
-      let lvl1Node = tree.find(t => t.name === lvl1);
-      if (!lvl1Node) {
-        lvl1Node = { name: lvl1, children: [] };
-        tree.push(lvl1Node);
+      for (let i = 1; i <= 10; i++) {
+        const levelKey = `TreeRuleDisplayName${i}`;
+        const levelName = item[levelKey];
+  
+        if (!levelName) break; // Stop if the level doesn't exist
+  
+        let existingNode = currentLevel.find(n => n.name === levelName);
+        if (!existingNode) {
+          existingNode = { name: levelName, children: [], expanded: false };
+          currentLevel.push(existingNode);
+        }
+  
+        parent = existingNode;
+        if (!existingNode.children) existingNode.children = [];
+        currentLevel = existingNode.children;
       }
   
-      let lvl2Node = lvl1Node.children!.find(c => c.name === lvl2);
-      if (!lvl2Node) {
-        lvl2Node = { name: lvl2, children: [] };
-        lvl1Node.children!.push(lvl2Node);
+      // Add the leaf node at the final level
+      if (parent) {
+        parent.children!.push({
+          name: item.Row1Col3 || 'Entry',
+          data: item
+        });
       }
-  
-      lvl2Node.children!.push({ name: item.Row1Col3 || 'Entry', data: item });
     });
   
     return tree;
   }
-  transformToTree(data: any[]): TreeNode[] {
-    const tree: TreeNode[] = [];
   
-    data.forEach(item => {
-      const lvl1 = item.TreeRuleDisplayName1 ?? 'Uncategorized';
-      const lvl2 = item.TreeRuleDisplayName2 ?? 'Sub-category';
-  
-      let lvl1Node = tree.find(t => t.name === lvl1);
-      if (!lvl1Node) {
-        lvl1Node = { name: lvl1, children: [], expanded: false };
-        tree.push(lvl1Node);
-      }
-  
-      // Ensure lvl1Node has children initialized
-      if (!lvl1Node.children) lvl1Node.children = [];
-  
-      let lvl2Node = lvl1Node.children.find(c => c.name === lvl2);
-      if (!lvl2Node) {
-        lvl2Node = { name: lvl2, children: [], expanded: false };
-        lvl1Node.children.push(lvl2Node);
-      }
-  
-      // Ensure lvl2Node has children initialized
-      if (!lvl2Node.children) lvl2Node.children = [];
-  
-      lvl2Node.children.push({ name: item.Row1Col3 || 'Entry', data: item });
-    });
-  
-    return tree;
-  }
+
   
   
 }
