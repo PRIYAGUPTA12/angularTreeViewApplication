@@ -13,7 +13,7 @@ interface TreeNode {
   name: string;
   children?: TreeNode[];
   data?: any;
-  expanded?: boolean; // ✅ Add this line
+  expanded?: boolean; 
 }
 
 interface TreeNode1 {
@@ -47,7 +47,7 @@ export class TreeAccordianComponent {
           this.treeData = this.transformToDynamicTree(tableData);
           console.log(this.treeData)
           this.dataSource.data = this.treeData;
-          this.dataLoaded = true; // 🔥 Set flag to true when ready
+          this.dataLoaded = true; 
         }
       },
       error: (err) => {
